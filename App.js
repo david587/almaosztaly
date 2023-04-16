@@ -1,3 +1,13 @@
+/*
+* File: App.js
+* Author: Baráth Dávid
+* Copyright: 2023, Baráth Dávid
+* Date: 2023-04-16
+* Group: Szoft 2 N
+* Github: https://github.com/david587/
+* Licenc: GNU GPL
+*
+*/
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
@@ -24,6 +34,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Baráth Dávid, Szoft 2 N, 2023.04.16</Text>
       <Text style={styles.title}>Alma arány számítás</Text>
       <TextInput
         style={styles.textInput}
