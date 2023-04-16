@@ -13,8 +13,8 @@ function calculatePercentage(firstClassBoxes, secondClassBoxes) {
 
 
 export default function App() {
-  const [firstClassBoxes, setFirstClassBoxes] = useState(0);
-  const [secondClassBoxes, setSecondClassBoxes] = useState(0);
+  const [firstClassBoxes, setFirstClassBoxes] = useState("");
+  const [secondClassBoxes, setSecondClassBoxes] = useState("");
   const [result, setResult] = useState(null);
 
   const handleCalculate = () => {
@@ -24,16 +24,19 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Elsőosztályú ládák száma:</Text>
+      <Text style={styles.title}>Alma arány számítás</Text>
       <TextInput
+        style={styles.textInput}
         keyboardType="numeric"
+        placeholder="elsőosztályú ládák"
         value={firstClassBoxes.toString()}
         onChangeText={text => setFirstClassBoxes(parseInt(text))}
       />
 
-      <Text>Másodosztályú ládák száma:</Text>
       <TextInput
+        style={styles.textInput}
         keyboardType="numeric"
+        placeholder="másodosztályú ládák"
         value={secondClassBoxes.toString()}
         onChangeText={text => setSecondClassBoxes(parseInt(text))}
       />
@@ -57,5 +60,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  textInput: {
+    height: 40,
+    width: 200,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingHorizontal: 10,
   },
 });
